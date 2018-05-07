@@ -1,0 +1,22 @@
+<%= form_for(pub) do |f| %>
+  <% if pub.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pub.errors.count, "error") %> prohibited this pub from being saved:</h2>
+
+      <ul>
+      <% pub.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+
+<!--form_tag    검색 키워드 조건을 실행.-->
+<!--form_helper csrf공격 방지, 기본 메서드는 post, form method: "post"임으로 없어도 무방.-->

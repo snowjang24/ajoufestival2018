@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workspace</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  회원가입 로그인 등 기능은 'application.html.erb'파일에 존재<br>
+  <!--, 나중에 서비스 제공할때는 회원가입 로그인 등 보여지는 부분만 제거, 로그인 했을 경우만 'CRUD' 기능 사용할 수 있도록! -->
+  
+  
+  <%if user_signed_in?%>
+    <%=current_user.name%> / <%=current_user.email%> / 
+    <%=link_to '로그아웃', destroy_user_session_path, method: :delete%>
+  <%else%>
+    <%=link_to '회원가입', new_user_registration_path %>/
+    <%=link_to '로그인', new_user_session_path%>  
+  <%end%>
+  
+  <!--devise gem alert, flash 지정-->
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<h1>Editing Pub</h1>
+
+<%= render 'form', pub: @pub %>
+
+<%= link_to 'Show', @pub %> |
+<%= link_to 'Back', pubs_path %>
+
+
+
+<!--%=form_tag(pub_path, method: "patch") do%>
+    %=label_tag 'pub_major', '학과'%>
+    %=text_field_tag('pub_major', @pub.major)%><br/>
+    
+    %=label_tag 'pub_detail', '주점설명'%>
+    %=text_area_tag('pub_detail',@pub.detail)%><br/>
+    %=submit_tag '작성'%>
+%end%>-->
