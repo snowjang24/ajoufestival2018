@@ -1,6 +1,40 @@
 <h1>Editing Pub</h1>
+<h2>edit 페이지 carrierwave 사용만 된다면 오류 수정가능할 듯.</h2>
+<!--%= render 'form', pub: @pub %>-->
 
-<%= render 'form', pub: @pub %>
+
+
+<%=form_tag "/pubs/#{@pub.id}", method: 'patch', multipart: true do %>
+<%=label_tag :pubname, '주점이름'%>
+<%=text_field_tag (:pubname), @pub.pubname%><br />
+    
+<%=label_tag :major, '학과'%>
+<%=text_field_tag (:major), @pub.major%><br/>
+
+<%=label_tag :pub_detail, '주점설명'%>
+<%=text_area_tag (:pub_detail), @pub.pub_detail%><br />
+
+<%=label_tag :date, '주점날짜'%>
+<%=text_field_tag (:date), @pub.date%><br />
+
+<%=label_tag :map, '구역'%>
+<%=text_field_tag (:map), @pub.map%><br />
+
+<%=label_tag :pubprice, '가격(사진)'%>-->-->
+<%=file_field_tag (:pubprice), @pub.pubprice%><br />-->-->
+
+<%=label_tag :pubpost, '가격(사진)'%>-->-->
+<%=file_field_tag (:pubpost), @pub.pubpost%><br />-->-->
+
+
+<%=submit_tag '제출'%>
+
+<%end%>
+
+
+
+
+
 
 <%= link_to 'Show', @pub %> |
 <%= link_to 'Back', pubs_path %>

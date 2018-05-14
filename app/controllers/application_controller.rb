@@ -5,7 +5,10 @@ class ApplicationController < ActionController::Base
   
   ##여기서 부터는 devise gem관련된 action만 처리
   before_action :configure_permitted_parameters, if: :devise_controller?
-
+  
+  #다른 모든 컨트롤러에서 pubs_helper를 사용할 수 있다.
+  include PubsHelper
+  
   protected
 
   def configure_permitted_parameters

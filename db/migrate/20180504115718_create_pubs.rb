@@ -4,6 +4,12 @@ class CreatePubs < ActiveRecord::Migration[5.0]
       t.string :major
       t.string :pubname
       t.integer :date
+      #23 1 
+      #24 2 
+      #25 3 
+      #2324 4 
+      #2425 5
+      
       #date라고 하지 말고 각 데이터마다 3개의 요일을 집어넣을까? ex Boolean type으로 월 화 수
       #t.:area
       #area detail 필요할까? by minkj

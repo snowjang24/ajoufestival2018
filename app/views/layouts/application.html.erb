@@ -1,28 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Workspace</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ajou Festival</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  회원가입 로그인 등 기능은 'application.html.erb'파일에 존재<br>
-  <!--, 나중에 서비스 제공할때는 회원가입 로그인 등 보여지는 부분만 제거, 로그인 했을 경우만 'CRUD' 기능 사용할 수 있도록! -->
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light header">
+  <a class="navbar-brand" href="#home">
+    Ajou Univ.
+    </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
   
   
-  <%if user_signed_in?%>
-    <%=current_user.name%> / <%=current_user.email%> / 
-    <%=link_to '로그아웃', destroy_user_session_path, method: :delete%>
-  <%else%>
-    <%=link_to '회원가입', new_user_registration_path %>/
-    <%=link_to '로그인', new_user_session_path%>  
-  <%end%>
-  
-  <!--devise gem alert, flash 지정-->
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= yield %>
 
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/program/">Program</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/program/concert">Concert</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/pubs">Pubs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/pubs/index">Map</a>
+      </li>
+      <li style="margin-top: 0.5rem; margin-left: 0.3rem;">
+        <%if user_signed_in?%>
+            <%=current_user.name%> / <%=current_user.email%> / 
+            <%=link_to '로그아웃', destroy_user_session_path, method: :delete%>
+          <%else%>
+            <%=link_to '회원가입', new_user_registration_path %>  /
+            <%=link_to '로그인', new_user_session_path%>  
+          <%end%>
+      </li>
+    </ul>
+  </div>
+</nav>
+  <!--    회원가입 로그인 등 기능은 'application.html.erb'파일에 존재<br>-->
+  <!--, 나중에 서비스 제공할때는 회원가입 로그인 등 보여지는 부분만 제거, 로그인 했을 경우만 'CRUD' 기능 사용할 수 있도록! -->
+  <!--devise gem alert, flash 지정-->
+  <!--<p class="notice"><%= notice %></p>-->
+  <!--<p class="alert"><%= alert %></p>-->
+  <%= yield %>
+  
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

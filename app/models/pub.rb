@@ -5,6 +5,6 @@ class Pub < ActiveRecord::Base
     
     
     #ImageUploader를 통해서 image_url이라는 column에 넣어줄거다.
-    mount_uploader :image_url, ImageUploader
-    
+    mount_uploader :pubprice, ImageUploader
+    mount_uploader :pubpost, ImageUploader
 end

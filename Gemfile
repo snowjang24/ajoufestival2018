@@ -1,7 +1,13 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
+gem 'rails_db'
 gem 'rails', '5.0.6'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -23,11 +29,14 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'bootstrap-sass'
+gem 'ransack'
 gem 'devise'
 gem 'carrierwave'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'ransack'
+gem 'rails-simple-search'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

@@ -1,73 +1,196 @@
-<div class="container">
-    <ul class="tabs">
-        <li class="tab-link current" data-tab="tab-1">DAY 23</li>
-        <li class="tab-link" data-tab="tab-2">DAY 24</li>
-        <li class="tab-link" data-tab="tab-3">DAY 25</li>
-    </ul>
-    
-    <div id="tab-1" class="tab-content current">
+<!--내용-->
+<!--내용-->
+<!--내용-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+
+<h2 class="title">
+  SCHOOL EVENT
+</h2>
+
+<div class="tabs">
+  <div class="tab-2">
+    <label for="tab2-1">DAY 23</label>
+    <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+    <div class="tab-content" style="width:300%;">
+      <table class="table">
+        <tr>
+          <th width = "500">TIME</th>
+          <th width = "500">PROGRAM</th>
+        </tr>
+        <tr>
+          <td width = "500">11:00~12:00</td>
+          <td width = "500">program1</td>
+        </tr>
+        <tr>
+          <td width = "500">12:00~13:00</td>
+          <td width = "500">program2</td>
+        </tr>
+        <tr>
+          <td width = "500">13:00~14:00</td>
+          <td width = "500">program3</td>
+        </tr>
+        <tr>
+          <td width = "500">14:00~15:00</td>
+          <td width = "500">program4</td>
+        </tr>
+        <tr>
+          <td width = "500">15:00~16:00</td>
+          <td width = "500">program5</td>
+        </tr>
+        <tr>
+          <td width = "500">16:00~17:00</td>
+          <td width = "500">program6</td>
+        </tr>
+        <tr>
+          <td width = "500">17:00~18:00</td>
+          <td width = "500">program7</td>
+        </tr>
+  
+      </table>
     </div>
-    <div id="tab-2" class="tab-content">
+  </div>
+  <div class="tab-2">
+    <label for="tab2-2">DAY 24</label>
+    <input id="tab2-2" name="tabs-two" type="radio">
+    <div class="tab-content" style="position: relative; left: -100%; width: 300%;">
+      <table class="table">
+        <tr>
+          <th width = "500">TIME</th>
+          <th width = "500">PROGRAM</th>
+        </tr>
+        <tr>
+          <td width = "500">11:00~12:00</td>
+          <td width = "500">program1</td>
+        </tr>
+        <tr>
+          <td width = "500">12:00~13:00</td>
+          <td width = "500">program2</td>
+        </tr>
+        <tr>
+          <td width = "500">13:00~14:00</td>
+          <td width = "500">program3</td>
+        </tr>
+        <tr>
+          <td width = "500">14:00~15:00</td>
+          <td width = "500">program4</td>
+        </tr>
+        <tr>
+          <td width = "500">15:00~16:00</td>
+          <td width = "500">program5</td>
+        </tr>
+        <tr>
+          <td width = "500">16:00~17:00</td>
+          <td width = "500">program6</td>
+        </tr>
+        <tr>
+          <td width = "500">17:00~18:00</td>
+          <td width = "500">program7</td>
+        </tr>
+  
+      </table>
     </div>
-    <div id="tab-3" class="tab-content">
+  </div>
+    <div class="tab-2">
+    <label for="tab2-3">DAY 25</label>
+    <input id="tab2-3" name="tabs-two" type="radio">
+    <div class="tab-content" style="position:relative; left:-200%; width:300%;">
+      <table class="table">
+        <tr>
+          <th width = "500">TIME</th>
+          <th width = "500">PROGRAM</th>
+        </tr>
+        <tr>
+          <td width = "500">11:00~12:00</td>
+          <td width = "500">program1</td>
+        </tr>
+        <tr>
+          <td width = "500">12:00~13:00</td>
+          <td width = "500">program2</td>
+        </tr>
+        <tr>
+          <td width = "500">13:00~14:00</td>
+          <td width = "500">program3</td>
+        </tr>
+        <tr>
+          <td width = "500">14:00~15:00</td>
+          <td width = "500">program4</td>
+        </tr>
+        <tr>
+          <td width = "500">15:00~16:00</td>
+          <td width = "500">program5</td>
+        </tr>
+        <tr>
+          <td width = "500">16:00~17:00</td>
+          <td width = "500">program6</td>
+        </tr>
+        <tr>
+          <td width = "500">17:00~18:00</td>
+          <td width = "500">program7</td>
+        </tr>
+  
+      </table>
     </div>
-    
+  </div>
 </div>
 
 
-<style>
+<div class="lineup">
+  <h2 class="title">
+  CONCERT LINE UP
+  </h2>
+  <div class="lineup-day23" style="padding: 20px;">
+    <%= image_tag("line1.png", width:"100%", height:"3", :style =>"margin-left: auto; margin-right: auto; display: block; position:relative; top:2.6rem; z-index:1;", :class => "center-line" ) %>
+    <div class="lineup-day-num23" style = "z-index: 2">23</div>
+  </div>
+  <div class="line-up-img-section">
+  <div class ="line-up-img">
+    <br>
+    <%= image_tag("boram.png", :style => "width: 50%; padding: 1rem; float:left;", :class => "hover-flash") %>
+  </div>
+  <div class ="line-up-img">
+    <%= image_tag("dadu.png", :style => "width: 50%; padding: 1rem; float:left;") %>
+  </div>
+  </div>
+  <div class="lineup-day24" style="padding: 20px;">
+       <%= image_tag("line1.png", width:"100%", height:"3", :style =>"margin-left: auto; margin-right: auto; display: block; position:relative; top:2.8rem; z-index:1;", :class => "center-line" ) %>
+    <div class="lineup-day-num24" style = "z-index: 2, ">24</div>
+  </div>
+  <div class="line-up-img-section">
+  <div class ="line-up-img">
+    <br><br>
+    <%= image_tag("exid.png", :style => "width: 50%; padding: 10px; float:left;") %>
+  </div>
+  <div class ="line-up-img">
+    <%= image_tag("men.png", :style => "width: 50%; padding: 10px; float:left;") %>
+  </div>
+  </div>
+  <div class="lineup-day25 "style="padding: 20px;">
+       <%= image_tag("line1.png", width:"100%", height:"3", :style =>"margin-left: auto; margin-right: auto; display: block; position:relative; top:3.0rem; z-index:1;", :class => "center-line" ) %>
+    <div class="lineup-day-num25" style = "z-index: 2">25</div>
+  </div>
+  <div class="line-up-img-section">
+  <div class ="line-up-img">
+    <br><br>
+    <%= image_tag("moon.png", :style => "width: 50%; padding: 10px; float:left;") %>
+  </div>
+  <div class ="line-up-img">
+    <%= image_tag("sooran.png", :style => "width: 50%; padding: 10px; float:left;") %>
+  </div>
+  </div>
+  
+  
+  
+  <!--선이 올 자리입니다-->
+  
+      
+      
+      
+      
+      
+    </ul>
+  </div>
 
-body{
-    margin-top: 100px;
-	font-family: 'Trebuchet MS', serif;
-	line-height: 1.6
-}
-    
-.container{
-	width: 500px;
-	margin: 0 auto;
-}
+  <!--선이 올 자리입니다-->
 
-ul.tabs{
-	margin: 0px;
-	padding: 0px;
-	list-style: none;
-}
 
-ul.tabs li{
-	background: none;
-	color: #222;
-	display: inline-block;
-	padding: 10px 15px;
-	cursor: pointer;
-}
-
-ul.tabs li.current{
-	background: #ededed;
-	color: #222;
-}
-
-.tab-content{
-	display: none;
-	background: #ededed;
-	padding: 15px;
-}
-
-.tab-content.current{
-	display: inherit;
-}
-
-</style>
-
-<script>
-
-$(document).ready(function(){
-    $('ul.tabs li').click(function(){
-        var tab_id = $(this).attr('data-tab');
-        $('ul.tabs li').removeClass('current');
-        $('.tab-content').removeClass('current');
-        $(this).addClass('current');
-        $("#"+tab_id).addClass('current');
-    })
-})
-</script>
+</div>

@@ -10,18 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180507120143) do
+ActiveRecord::Schema.define(version: 20180510080149) do
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "pub_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pub_id"], name: "index_comments_on_pub_id"
+  end
 
   create_table "pubs", force: :cascade do |t|
     t.string   "major"
     t.string   "pubname"
     t.integer  "date"
-    t.string   "area"
     t.text     "pub_detail"
+    t.string   "map"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "image_url"
-    t.string   "pubprices"
+    t.string   "pubprice"
+    t.string   "pubpost"
+  end
+
+  create_table "searches", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "pub_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pub_id"], name: "index_searches_on_pub_id"
   end
 
   create_table "users", force: :cascade do |t|

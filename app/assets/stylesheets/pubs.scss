@@ -1,3 +1,83 @@
 // Place all the styles related to the Pubs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+//<link rel="stylesheet" href "css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
+
+.contentHidden {
+    visibility:hidden;
+}
+.contentVisible {
+    visibility:visible;
+}
+
+
+.btn1 {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn1:hover, .btn1:focus {
+    background-color: #2980B9;
+}
+
+.clicked_area {
+    position: relative;
+    display: inline-block;
+}
+
+.clicked_area-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.clicked_area-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.clicked_area a:hover {background-color: #ddd}
+
+.show {display:block;}
+
+.pub-search {
+  display:inline-block;
+}
+
+
+.card{
+    display: flex;
+    justify-content: center;
+    width:45%;
+    height: 50%;
+    float:left;
+    margin-bottom: 3em;
+    padding:1em;
+    /*border-width: 0px;*/
+    margin-left: 0.7em;
+    margin-right: 0.3em;
+}
+
+.card-body{
+  text-align: center;
+}
+
+
+/*.card-columns {*/
+/*  @include media-breakpoint-only(lg) {*/
+/*    column-count: 4;*/
+/*  }*/
+/*  @include media-breakpoint-only(xl) {*/
+/*    column-count: 5;*/
+/*  }*/
+/*}*/

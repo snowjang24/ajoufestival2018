@@ -2,11 +2,33 @@ class PubsController < ApplicationController
   #로그인 해야지만 보여지도록 
   before_action :authenticate_user!, only: [:show, :new, :edit, :update, :destroy]
   before_action :set_pub, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :verify_authenticity_token
+  
+  # GET /pubs 
+  # GET /pubs.json 
+  
 
-  # GET /pubs
-  # GET /pubs.json
   def index
-    @pubs = Pub.all
+   
+    @q = Pub.ransack(params[:q])
+    @pub = @q.result(distinct: true)
+    
+    #랜덤 광고를 위한 독립적인 변수.
+    @pub2 = Pub.all
+    
+    if (params[:date].present?)
+       @pub = Pub.where(date: params[:date])      
+    end
+    # @pub3 = Pub.where(:map => params[:map])
+    
+    
+    
+  end
+  
+  
+  
+  def indexup
+    redirect_to pubs_indexup_path
   end
 
   # GET /pubs/1
@@ -17,6 +39,7 @@ class PubsController < ApplicationController
   # GET /pubs/new
   def new
     @pub = Pub.new
+    
   end
 
   # GET /pubs/1/edit
@@ -26,6 +49,24 @@ class PubsController < ApplicationController
   # POST /pubs
   # POST /pubs.json
   def create
+      @pub= Pub.create(pubname: params[:pubname],
+                       major: params[:major],
+                       pub_detail: params[:pub_detail],
+                       date: params[:date],
+                       map: params[:map],
+                       pubprice: params[:pubprice],
+                       pubpost: params[:pubpost]
+                       )
+    # @pub = Pub.new
+    # @pub.major = params[:major]
+    # @pub.pubname = params[:pubname]
+    # @pub.pub_detail = params[:pub_detail]
+    # @pub.date = params[:date]
+    # @pub.map = params[:map]
+    # @pub.pubprices = params[:pubprices]
+
+
+  
     # @major = params[:major]
     # @pubname = params[:pubname]
     # @date = params[:date]
@@ -42,7 +83,8 @@ class PubsController < ApplicationController
     
     
    #--아래는 scaffold default  
-    @pub = Pub.new(pub_params)
+#이것을 쓴다면 위에 36-42줄은 없어도 되는데..... , 추가적으로 pub_params를 사용해야 하고.
+#    @pub = Pub.new(pub_params)
 
     respond_to do |format|
       if @pub.save
@@ -69,14 +111,14 @@ class PubsController < ApplicationController
     end
   end
   
-  def list #파라미터(날짜정보, 구역정보)를 받고 필터링해서 보여주는 부분 
-    #list.erb에서 random으로 추천해주는 것과 카드형식 부스
-  end
+  # def list #파라미터(날짜정보, 구역정보)를 받고 필터링해서 보여주는 부분 
+  #   #list.erb에서 random으로 추천해주는 것과 카드형식 부스
+  # end
   
-  def detail #list에서 클릭시 보여지는 상세페이지 
-    #id를 list로부터 받는다
-    #detail.erb로 id에 해당하는 db 자료 전달.
-  end
+  # def detail #list에서 클릭시 보여지는 상세페이지 
+  #   #id를 list로부터 받는다
+  #   #detail.erb로 id에 해당하는 db 자료 전달.
+  # end
   
  
 
@@ -89,16 +131,30 @@ class PubsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def get_var
+        @date = params[:date]
+        
+        render :text => params[:choice1] + params[:choice2]
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    
     def set_pub
-      @pub = Pub.find(params[:id])
+      @pubs = Pub.find(params[:id])
     end
 
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pub_params
-      params.fetch(:pub, {})
+      #params.fetch(:pub, {})
+      #params.require(:pub).permit(:major, :pubname, :date, :pub_detail, :map, :pubprices)
+      #params.permit(:major, :pubname, :date, :pub_detail, :map, :pubprices)
     end
 end
+
+
+    
+    
+    
+   

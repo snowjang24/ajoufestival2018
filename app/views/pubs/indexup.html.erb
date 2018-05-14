@@ -1,0 +1,10 @@
+<h1>indexup페이지 입니다.</h1>
+<%= search_form_for @q do |f| %>
+
+  # Search if the name field contains...
+  <%= f.label :srch %>
+  <%= f.search_field :srch %>
+
+ 
+  <%= f.submit %>
+<% end %>
