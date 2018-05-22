@@ -331,15 +331,18 @@ display:block; }
 
 .pub{
   float: left;
+ // margin: 10em;
+ margin-left: 5em;
 }
 .date{
   float: right;
 }
 .area{
- /* position: relative;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 0.5em;*/
+  // position: relative;
+   display: flex;
+   justify-content: center;
+  // margin-bottom: 0.5em;
+  //text-align: center;
 }
 
 
