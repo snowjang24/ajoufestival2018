@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'bootstrap', '~> 4.0.0.alpha6'
-gem 'sprockets-rails', :require => 'sprockets/railtie'
+# gem 'bootstrap', '~> 4.0.0.alpha6'
+# gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
@@ -33,9 +33,12 @@ gem 'bootstrap-sass'
 gem 'ransack'
 gem 'devise'
 gem 'carrierwave'
+gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'ransack'
+gem 'rails_admin'
 gem 'rails-simple-search'
 # Use Unicorn as the app server
 # gem 'unicorn'

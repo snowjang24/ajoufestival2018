@@ -1,65 +1,254 @@
 <!DOCTYPE html>
 <html>
 <head>
+  
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ajou Festival</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => "reload" %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => "reload" %>
   <%= csrf_meta_tags %>
+  
+  <meta property="og:image" content="https://drive.google.com/uc?id=1t4mlBtQQPbOk7dIA2ces61SJPGgqPQSr"/>
+  <meta property="og:description" content="2018년 아주대학교 축제사이트입니다."/>
+  <meta property="og:title" content="2018 아주대학교 대동제 AUBE"/>
+  <meta property="og:image:width" content="200">
+  <meta property="og:image:height"  content="375">
+  
 </head>
 <body>
+<div class="wrapper">
+  <!-- Basic Navbar --> 
+  <header id="header" class="header">
+    <div class="header-inner container">
+      <div class="nav-menu">
+        <ul class="nav-menu-inner">
+          <li><a class="nav-link" href="javascript:time_function()" href="/#time_table" onclick="window.location.replace('/#home'); time_function();" >공연시간</a></li>
+          <li><a class="nav-link" href="javascript:line_function()" href="/#home" onclick="line_function();"  a href="/#line_up">라인업</a></li>
+          <li><a class="nav-link" href="javascript:map_function()" >지도</a></li>
+          <li><a class="nav-link" href="/pubs">부스</a></li>
+          <li><a class="nav-link" href="/losts">분실물</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+<!-- Basic Navbar End -->
   
-  <nav class="navbar navbar-expand-lg navbar-light bg-light header">
-  <a class="navbar-brand" href="#home">
-    Ajou Univ.
-    </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
   
   
+  
+  
+          
+          <!--% if user_signed_in? %>-->
+          <!--  <li class="nav-item">-->
+          <!--    %= link_to '로그아웃', destroy_user_session_path, method: :delete%>-->
+          <!--  </li>-->
+          <!--% else %>-->
+          <!--  <li class="nav-item">-->
+          <!--  %= link_to '회원가입', new_user_registration_path %>-->           <!--  </li>-->
+          <!--  <li class="nav-item">-->
+          <!--    %= link_to '로그인', new_user_session_path %>-->
+          <!--  </li>-->
+          <!--% end %>-->
+      <!--  </ul>-->
+      <!--</div>-->
+   
+  
+<!-- 위로 바로가기 버튼 시작 -->
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/program/">Program</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/program/concert">Concert</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/pubs">Pubs</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/pubs/index">Map</a>
-      </li>
-      <li style="margin-top: 0.5rem; margin-left: 0.3rem;">
-        <%if user_signed_in?%>
-            <%=current_user.name%> / <%=current_user.email%> / 
-            <%=link_to '로그아웃', destroy_user_session_path, method: :delete%>
-          <%else%>
-            <%=link_to '회원가입', new_user_registration_path %>  /
-            <%=link_to '로그인', new_user_session_path%>  
-          <%end%>
-      </li>
-    </ul>
-  </div>
-</nav>
-  <!--    회원가입 로그인 등 기능은 'application.html.erb'파일에 존재<br>-->
-  <!--, 나중에 서비스 제공할때는 회원가입 로그인 등 보여지는 부분만 제거, 로그인 했을 경우만 'CRUD' 기능 사용할 수 있도록! -->
-  <!--devise gem alert, flash 지정-->
-  <!--<p class="notice"><%= notice %></p>-->
-  <!--<p class="alert"><%= alert %></p>-->
-  <%= yield %>
+<a href="#" id="a_top">
+   <div id="gobacktotop"style="color:#e8b9dd">
+      <i class="fas fa-arrow-circle-up fa-2x hvr-buzz-out top-color"></i>
+      <!--<i class="fa fa-grav fa-lg"></i>-->
+   </div>
+</a>
+<!-- 위로 바로가기 버튼 끝 -->  
   
+<section id="main-section">
+  <%= yield %>  
+</section>
+<!-- Basic Footer -->
+  <footer id="footer">
+      <div class="aulikelion-info">
+        <ul class="linkto-aulikelion">
+          <li id="footer-title">
+            <div class="footer-title-content">Contact Us</div>
+          </li>
+          <li id="footer-fb">
+            <a href="https://fb.com/aulikelion" target="_blank"><i class="fab fa-facebook hvr-buzz-out icon-blue"></i></a>
+            <p>@aulikelion</p>
+          </li>
+          <li id="footer-em">
+            <a href="mailto:asdka4618@likelion.org" target="_blank"><i class="fa fa-envelope hvr-buzz-out icon-blue"></i></a>
+            <p>asdka4618@likelion.org</p>
+          </li>
+        </ul>
+      </div>
+      <div class="copyright">
+        <p>
+          © 2018 
+          <a class="hvr-grow" target="_blank" href="/about"/>AULIKELION.</a>
+           All Rights Reserved.
+        </p>
+      </div>
+  </footer>
   
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- Basic Footer End -->
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+<!--밑에 복사본으로 있던 script 내용들, 무슨 기능인지 몰라서 우선 살려둠.-->
+
+<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+
+
+
+
+
+<!--nav바 smooth scroll-->
+<script>
+
+
+// 스크롤 탑
+
+//스크롤 탑
+
+// f.submit에 class를 search_btm으로 먹이고 해당 녀석이 클릭될때 
+// #search 부분으로 이동하라
+  // $('.btn btn-outline-primary search-button').click(function(){
+
+  //   $('html, body').animate({
+  //       scrollTop: $('#search').offset().top
+  //   }, 500);
+    
+  // });
+    // function main_function() {
+    // // window.location.href="/#home";
+    // if(location.pathname== "/"){
+    //   $('html, body').animate({
+    //     scrollTop: $('#main_page').offset().top
+    //   }, 500);
+    // }else{
+    //   window.location.href="/#main_page";
+    // }
+   
+//평소에는 보이지 않는다.
+    $( window ).scroll( function() {
+    if ( $( this ).scrollTop() > 200 ) {
+      $( '#a_top' ).fadeIn();
+    } else {
+      $( '#a_top' ).fadeOut();
+    }
+    } );
+    
+    //맨위로가기 버튼 animate 함수
+    $( '#a_top' ).click( function() {
+      $( 'html, body' ).animate( { scrollTop : 0 }, 400 );
+        return false;
+    } );
+    
+    
+   function main_function() {
+    // window.location.href="/#home";
+    if(location.pathname== "/"){
+      $('html, body').animate({
+        scrollTop: $('#main_page').offset().top
+      }, 500);
+    }else{
+      window.location.href="/";
+    }
+
+  }  
+  
+    
+  function time_function() {
+    // window.location.href="/#home";
+    if(location.pathname== "/"){
+      $('html, body').animate({
+        scrollTop: $('#time_table').offset().top
+      }, 500);
+    }else{
+      window.location.href="/#time_table";
+    }
+
+  }
+  
+    function line_function() {
+      if(location.pathname== "/"){
+        $('html, body').animate({
+          scrollTop: $('#line_up').offset().top
+        }, 500);
+      }else{
+      window.location.href="/#line_up";
+    }
+  } 
+  
+     function map_function() {
+     if(location.pathname== "/"){
+       $('html, body').animate({
+         scrollTop: $('#map_script').offset().top
+       }, 500);
+     }else{
+     window.location.href="/#map_script";
+   }
+ }
+  
+//   $('a[href^="#"][data-animate]').live('click', function() {
+//   var hash = $(this).attr('href');
+//   var offset = $(hash).offset();
+//   if (offset) {
+//     $('html, body').animate({ scrollTop: offset.top }, 'slow');
+//     return false;
+//   }
+// });
+
+
+// $(document).ready(function(){
+//   // Add scrollspy to <body>
+//   $('body').scrollspy({target: ".navbar", offset: 50});   
+
+//   // Add smooth scrolling on all links inside the navbar
+//   $("#navbarNav a").on('click', function(event) {
+//     // Make sure this.hash has a value before overriding default behavior
+//     if (this.hash !== "") {
+//       // Prevent default anchor click behavior
+//       event.preventDefault();
+
+//       // Store hash
+//       var hash = this.hash;
+
+//       // Using jQuery's animate() method to add smooth page scroll
+//       // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+//       $('html, body').animate({
+//         scrollTop: $(hash).offset().top
+//       }, 800, function(){
+   
+//         // Add hash (#) to URL when done scrolling (default click behavior)
+//         window.location.hash = hash;
+//       });
+//     }  // End if
+//   });
+// });
+</script>
+
 </body>
 </html>
+
+
+

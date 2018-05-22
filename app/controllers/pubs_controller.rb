@@ -1,6 +1,6 @@
 class PubsController < ApplicationController
   #로그인 해야지만 보여지도록 
-  before_action :authenticate_user!, only: [:show, :new, :edit, :update, :destroy]
+  # before_action :authenticate_user!, only: [:show, :new, :edit, :update, :destroy]
   before_action :set_pub, only: [:show, :edit, :update, :destroy]
   skip_before_filter :verify_authenticity_token
   
@@ -10,18 +10,20 @@ class PubsController < ApplicationController
 
   def index
    
-    @q = Pub.ransack(params[:q])
-    @pub = @q.result(distinct: true)
+    @q = Pub.ransack(params[:q])  
+    # @w = params[:q]
+    if params[:q] 
+      @pub = @q.result(distinct: true)
+      # @w = params["q"]["major_or_pubname_cont_any"]  
+      @w = params[:q]["major_or_pubname_cont_any"]
+      # redirect_to "/pubs/?utf8=✓&q%5Bmajor_or_pubname_cont_any%5D=#{params[:q]["major_or_pubname_cont_any"]}&commit=검색#search"
+      #{@pub[:major_or_pubname_cont_any].to_s}
+    else
+      @pub = @q.result(distinct: true)
+    end
     
     #랜덤 광고를 위한 독립적인 변수.
     @pub2 = Pub.all
-    
-    if (params[:date].present?)
-       @pub = Pub.where(date: params[:date])      
-    end
-    # @pub3 = Pub.where(:map => params[:map])
-    
-    
     
   end
   
@@ -55,7 +57,8 @@ class PubsController < ApplicationController
                        date: params[:date],
                        map: params[:map],
                        pubprice: params[:pubprice],
-                       pubpost: params[:pubpost]
+                       pubpost: params[:pubpost],
+                       pub_booth: params[:pub_booth]
                        )
     # @pub = Pub.new
     # @pub.major = params[:major]

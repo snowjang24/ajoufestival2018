@@ -1,0 +1,66 @@
+<div class="lost-container">
+  <div class="container text-center">
+      <h1 class="lost-title">분실물 찾기</h1>
+      
+    <section id="search">
+      
+        <%= search_form_for @q  do | f | %>
+        <div class="row lost-search align-items-center justify-content-around"> 
+          <%= f.search_field :item_cont_any, placeholder: '분실물을 입력하세요', :class => 'lost-input' %>
+          <%=f.submit '찾기', :class => 'btn btn-outline-dark' %>
+          </div>
+        <% end %>
+      
+      <%= link_to '분실물 등록', new_lost_path, :class => 'btn btn-outline-light lost-new-button btn-lg' %>
+    </section>
+        
+    <div id="columns">
+    <% @lost.each do |lost| %>
+    <figure class="lost-card">
+      <% if lost.lost.url == nil %>
+        <img src="https://images.unsplash.com/photo-1465708897837-11a63009dc73?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ce7b4d73a6e0753e7ef4723f97d6e504&auto=format&fit=crop&w=1189&q=80" alt="lost-img">
+      <%else%>
+        <img src="<%=lost.lost.url%>" alt="lost-img">
+      <%end%>
+      <figcaption><%=lost.item%></figcaption>
+      <figcaption><%=lost.place%></figcaption>
+      <figcaption><%=lost.number%></figcaption>
+    </figure>  
+    <%end%>
+    </div>
+  </div>
+
+      
+
+
+
+
+      
+      
+
+<!--      <nav aria-label="Page navigation example">-->
+<!--        <ul class="pagination">-->
+<!--          <li class="page-item">-->
+<!--            <a class="page-link" href="#" aria-label="Previous">-->
+<!--              <span aria-hidden="true">&laquo;</span>-->
+<!--              <span class="sr-only">Previous</span>-->
+<!--            </a>-->
+<!--          </li>-->
+<!--          <li class="page-item"><a class="page-link" href="#">1</a></li>-->
+<!--          <li class="page-item"><a class="page-link" href="#">2</a></li>-->
+<!--          <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+<!--          <li class="page-item">-->
+<!--            <a class="page-link" href="#" aria-label="Next">-->
+<!--              <span aria-hidden="true">&raquo;</span>-->
+<!--              <span class="sr-only">Next</span>-->
+<!--            </a>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--</nav>-->
+  <div class="text-center">
+    <%= will_paginate(@lost, :renderer => WillPaginate::ActionView::LinkRenderer, class: 'pagination-sm') %>
+    <!--%= will_paginate @lost, render: BootstrapPagination::Rails,-->
+    <!--previous_label: "이전", next_label: "다음", inner_window: 1, outer_window: 0 %-->
+  </div>
+</div>
+

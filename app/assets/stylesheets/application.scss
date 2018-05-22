@@ -13,8 +13,7 @@
  *= require_tree .
  *= require_self
  */
- 
-@import "bootstrap";
+
 
 /* Basic Font Justification */
 @font-face { 
@@ -23,6 +22,24 @@
     font-weight: normal; 
     font-style: normal; 
 }
+
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face { font-family: 'BMJUA'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+@font-face { font-family: 'TmonMonsori'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff'); font-weight: normal; font-style: normal; }
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+//nav 바 폰트
+@import url('https://fonts.googleapis.com/css?family=Jua');
 /* Basic Font Justification End */
 
 
@@ -31,6 +48,11 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+html, body{
+    overflow-x: hidden;
+    
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -59,6 +81,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	overflow-y: hidden;
 }
 ol, ul {
 	list-style: none;
@@ -81,7 +104,7 @@ body a {
 
 body a:hover{
         text-decoration: none;
-        background: none;
+ 
 }
 body a:visited{
     color: inherit;
@@ -89,31 +112,180 @@ body a:visited{
 
 /* Basic initialize CSS at browser End*/
 
-
-
-*{
-  font-family: 'designhouseOTFLight00';
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}
+#main-section{
+    flex: 1 0 auto;
+}
+th{
+    text-align: center;
+}
+td{
+    text-align: center;
 }
 
-p {
-  font-family: 'designhouseOTFLight00' !important;
-  line-height: 1.3em;
-}
 
 body{
-  background-color: white;
-  // background: linear-gradient(#ffffff, #ade3ef) fixed; //그라데이션
-  color: grey;
-  font-family: 'designhouseOTFLight00';
+  background-color: #fff;
+  color: #333333;
+  font-family: 'Noto Sans KR';
 }
 
 footer{
   padding-bottom: 10px;
 }
 
-.header {
-    background-color: rgba(255, 255, 255, 0.95);
-    background-image: none !important;
-    border-bottom: 2px solid dodgerblue !important;
-    box-shadow: 0 8px 12px -8px rgba(0, 0, 0, 0.2) !important;
+/* Footer */
+#footer{
+  flex-shrink: 0;
+  background-color: #4a1d4e;
 }
+.copyright{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 40px 15px 60px 15px;
+}
+.copyright p{
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0px 0 10px 0;
+    color: #ffffffad;
+}
+.copyright p a{
+    color: #cd853f;
+}
+.copyright p a:hover{
+    background: none;
+    color: #ffd738;
+    transition: all .3s;
+}
+
+.linkto-aulikelion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.linkto-aulikelion li{
+    text-align: center;
+}
+
+.footer-title-content{
+    font-family: 'GyeonggiBatang','Spoqa Han Sans', sans-serif;
+    color: #ffffff;
+    font-size: 1.6em;
+    margin: 30px 0 30px 0;
+    padding-bottom: 10px;
+    border-bottom: solid #cd853f 5px;
+    letter-spacing: 1px;
+
+}
+
+.icon-blue{
+    color: #ffffff;
+}
+
+.linkto-aulikelion li a{
+    color: #fff;
+    font-size: 1.8em;
+}
+.linkto-aulikelion li a:hover{
+    color: #ffd738;
+}
+
+.linkto-aulikelion li p{
+    margin-top: 4px;
+    color: #fefefeb0;
+    font-size: 1.1em;
+    font-weight: 100;
+}
+
+/* Footer End */
+
+.hidden_content{
+  visibility: hidden;
+}
+
+
+
+//맨위로 올라가기 화살표, 평소에는 none
+a#a_top {
+  position: fixed;
+  right: 5px;
+  bottom: 20px;
+  display: none;
+  z-index: 9999;
+}
+
+.active *:before{
+    
+}
+
+
+/* Navbar */
+.hidden{
+    visibility: hidden;
+}
+
+.header{
+    position: absolute;
+    text-align: center;
+    top: 0px;
+    z-index: 1000;
+    background-color: rgba(0,0,0,1);
+    width: 100%;
+    transition: all .3s;
+}
+.header.header-fixed{
+    display: block;
+    position: fixed;
+    margin-top: 0 !important;
+}
+.header.header-below{
+    background-color: rgba(0,0,0,0.45);
+    transition: all .3s;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.header-inner{
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.nav-menu{
+    width: 100%;
+}
+.nav-menu-inner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.nav-menu-inner li a{
+    color: #e2bde5;
+    padding: 20px 10px 20px 10px;
+}
+
+///animation
+.ani-fadeInUp-5{
+    animation: 0.5s .6s fadeInUp both;
+}
+.ani-fadeInDown-5{
+    animation: 0.5s .6s fadeInDown both;
+}
+.ani-fadeInRight-5{
+    animation: 0.5s .6s fadeInRight both;
+}
+.ani-fadeinLeft-5{
+    animation: 0.5s .6s fadeInLeft both;
+}
+
+///animation end
+
+

@@ -1,0 +1,48 @@
+// Place all the styles related to the Abouts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.about-container {
+  background: -webkit-linear-gradient(top, #000000 2%,#471b4d 35%,#9f4e5f 68%,#bf746b 87%,#bf746b 87%,#ecad7c 100%); /* Chrome10-25,Safari5.1-6 */
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 92vh;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-family: 'Noto Sans KR';
+  color: white;
+  text-shadow: 0px 1px #333333, 4px 4px 0px #333333a8;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 4rem;
+}
+
+.about-title-content {
+  color: #ffffffbf;
+  margin-bottom: 1rem;
+  line-height: 1.4em;
+}
+
+.about-circle-img {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 0.8em;
+}
+
+.about-content{
+  h2 {
+    color: white;
+    font-size: 1.3em;
+    margin-bottom: 0.5em;
+    text-shadow: 1px 1px 3px #000000bf;
+  }
+  
+  h5 {
+    color: #ffffffb8;
+    margin-bottom: 1.3em;
+    line-height: 1.3em;
+  }
+
+}

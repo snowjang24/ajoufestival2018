@@ -15,17 +15,18 @@ include Faker
     Pub.create(
         major: '미디어학과',
         pubname: Faker::Food.dish,
-        date: Random.rand(6),
+        date: Random.rand(1..4),
         pub_detail: Faker::Food.description,
-        map: Random.rand(13),
+        map: ['a','b','c','d'].sample,
         pubprice: Faker::Avatar.image("my-own-slug", "50x50", "jpg"),
-        pubpost: Faker::Avatar.image("my-own-slug", "50x50", "jpg")
+        pubpost: Faker::Avatar.image("my-own-slug", "50x50", "jpg"),
+        pub_booth: ['pub', 'booth'].sample
         )
 end
 
 
 
-user = User.new(
+user = Admin.new(
   email: 'user@domain.com', 
   password: '123456789', 
   password_confirmation: '123456789'

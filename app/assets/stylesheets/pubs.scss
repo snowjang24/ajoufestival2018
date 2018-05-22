@@ -3,81 +3,354 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //<link rel="stylesheet" href "css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
 
-.contentHidden {
-    visibility:hidden;
-}
-.contentVisible {
-    visibility:visible;
-}
+@import url('https://fonts.googleapis.com/css?family=Nanum+Brush+Script');
 
 
-.btn1 {
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
+
+//map버튼 가운데 정렬
+.bth_botton{
+  text-align: center;
+  margin:1em;
 }
 
-.btn1:hover, .btn1:focus {
-    background-color: #2980B9;
-}
 
-.clicked_area {
-    position: relative;
-    display: inline-block;
-}
-
-.clicked_area-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.clicked_area-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
+// search 를 위한 css
+.pub_search {
     display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 2rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: none;
+    text-align: center;
+    font-family: 'Noto Sans KR';
 }
 
-.clicked_area a:hover {background-color: #ddd}
+// search 를 위한 css
+#q_major_or_pubname_cont_any{
+    display: inline-block;
+    width: 80%;
+    border: none;
+    border-bottom: solid 1px white;
+    box-shadow: none;
+    text-align: center;
+    background: none;
+    color: white;
+    // margin-top: 2px;
+    
 
-.show {display:block;}
-
-.pub-search {
-  display:inline-block;
 }
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1;/* Firefox */
+    font-size: 14px;
+}
+
+.search-button{
+  font-size: 1.5rem !important;
+  font-family: 'Noto Sans KR';
+}
+
+.search-way{
+  display: flex;
+  margin: 1em;
+
+}
+
+.search-size{
+  font-size: 1.3rem;
+}
+
+search_placeholder alignment
+[type="search"] {
+    text-align: center;
+    font-family: 'Noto Sans KR';
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+input:focus{
+	outline: none;
+}
+
+
+.d-block {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+//{  box-sizing: border-box; }
+
+
+///////isotope dropdown
+// {  box-sizing: border-box; }
+
+//body { font-family: sans-serif; }
+
+/*.item {
+  width: 100px;
+  height: 100px;
+  float: left;
+  
+  margin: 5px;
+  padding: 5px;
+}
+
+.item p {
+  margin: 0;
+}
+
+.red { background: #F33; }
+.blue { background: #88F; }
+.green { background: #3A3; }
+.orange { background: orange;}
+
+select, label, input { font-size: 20px; }
+
+label { margin-right: 10px; }
+*/
+///////isotope button
+
+//{ box-sizing: border-box; }
+
+body {
+  font-family: sans-serif;
+}
+
+//---- button ---- 
+
+/*.button {
+  display: inline-block;
+  padding: 0.5em 1.0em;
+  background: #EEE;
+  border: none;
+  border-radius: 7px;
+  background-image: linear-gradient( to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2) );
+  color: #222;
+  font-family: sans-serif;
+  font-size: 16px;
+  text-shadow: 0 1px white;
+  cursor: pointer;
+}*/
+
+.button:hover {
+  background-color: #fff9c2;
+  text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
+  color: #222;
+}
+
+.button:active,
+.button.is-checked {
+  background-color: #9055A2;
+}
+
+.button.is-checked {
+  color: white;
+  text-shadow: 0 -1px hsla(0, 0%, 0%, 0.8);
+}
+
+.button:active {
+  box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
+}
+
+// ---- button-group ---- 
+
+.button-group:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.button-group .button {
+  float: left;
+  border-radius: 0;
+  margin-left: 0;
+  margin-right: 1px;
+}
+
+
+
+
+// ui group 
+
+.ui-group {
+  display: inline-block;
+}
+
+.ui-group h3 {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 32px;
+  margin-right: 0.2em;
+  font-size: 16px;
+  color: #f4f4f4;
+  
+}
+
+.ui-group .button-group {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+
+
+
 
 
 .card{
-    display: flex;
-    justify-content: center;
-    width:45%;
-    height: 50%;
-    float:left;
-    margin-bottom: 3em;
-    padding:1em;
-    /*border-width: 0px;*/
-    margin-left: 0.7em;
-    margin-right: 0.3em;
+  border: none;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background: none;
+}
+.card-content{
+  z-index: 1;
+  display: block;
+  background: #FFFFFF;
+  min-height: 270px;
+  max-height: 470px;
+  border: solid rgba(0,0,0,0.3) 0.02px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+}
+
+.card-thumbnail{
+  background: #000000;
+  max-height: 200px;
+  min-height: 200px;
+  overflow: hidden;
+}
+
+.card-label{
+  font-family: "Noto Sans KR";
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  z-index: 1;
+  width: 55px;
+  height: 55px;
+  padding: 12.5px 0;
+  border-radius: 100%;
+  color: #ffffff;
+  text-align: center;
+  box-sizing: border-box;
+}
+.a-sec{
+  background : #df405a;
+}
+.b-sec{
+  background : #87314e;
+}
+.c-sec{
+  background : #311e3e;
+}
+.pub-sector{
+  font-weight: 600;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+.pub-day{
+  font-size: 10px;
 }
 
 .card-body{
-  text-align: center;
+  min-height: 200px;
+  max-height: 350px;
+  background: #FFFFFF;
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.club-name{
+  font-weight: 600;
+  font-family: 'Noto Sans KR';
+  position: absolute;
+  left: 15px;
+  top: 164px;
+  padding: 10px 15px;
+  color: #FFFFFF;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+}
+
+.pub-name{
+  font-weight: 700;
+  font-size: 1.5em;
+  display: inline-block;
+  position: relative;
+  border-bottom: solid rgba(0,0,0,0.5) 0.8px;
+  padding-bottom: 3px;
+  margin-bottom: 10px;
+  margin-top: 7px;
+}
+
+.pub-description{
+  font-weight: 100;
 }
 
 
-/*.card-columns {*/
-/*  @include media-breakpoint-only(lg) {*/
-/*    column-count: 4;*/
-/*  }*/
-/*  @include media-breakpoint-only(xl) {*/
-/*    column-count: 5;*/
-/*  }*/
-/*}*/
+.pubs-body{
+  padding-top: 68px;
+}
+
+
+.filters{
+  margin-top: 0.7em;
+  
+}
+.ui-group{
+  margin-bottom: 0.7em;
+}
+.bth_botton{
+  margin: 1em;
+  font-size: 50%;
+}
+
+#grad {
+    height: 100%;
+    background: #AAABD3; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(top, #000000 2%, #471b4d 35%, #9f4e5f 68%, #bf746b 87%, #bf746b 87%, #ecad7c 100%); /* Standard syntax (must be last) */
+    //background: linear-gradient(to right, #AAABD3 , #CBA6C3);
+}
+
+#mobileshow { 
+display:none; 
+}
+@media screen and (min-width: 600px) {
+#mobileshow { 
+display:block; }
+}
+
+
+
+
+
+
+.red_mikj{
+  border-color: #fff1b9!important;
+  background: none !important;
+  border: solid 1.5px;
+  color: white;
+}
+
+
+
+
+.group-btn{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5em;
+}
+
+
+
+.card-thumbnail img{
+  width: 100%;
+}

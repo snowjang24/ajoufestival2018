@@ -1,0 +1,39 @@
+<%= form_for(lost) do |f| %>
+  <% if lost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lost.errors.count, "error") %> prohibited this lost from being saved:</h2>
+
+      <ul>
+      <% lost.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :item, '분실물', :class => 'lost-label' %>
+    <%= f.text_field :item, :class => 'lost-content' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :place, '잃어버린 곳 / 찾은 곳', :class => 'lost-label' %>
+    <%= f.text_area :place, :class => 'lost-content-long' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :number, '연락처', :class => 'lost-label' %>
+    <%= f.text_field :number, :class => 'lost-content' %>
+  </div>
+
+  <div class="actions">
+    <div class="img-uploader">
+      <label for="file-input">
+        <span class="btn btn-outline-dark">분실물 이미지 등록</span>
+      </label>
+      <%=f.file_field :lost, id:"file-input" %>
+    </div>
+    <%= f.submit value: "등록", :class => 'btn btn-outline-dark' %>
+    <%= link_to 'Back', losts_path, :class => 'btn btn-outline-dark' %>
+  </div>
+<% end %>

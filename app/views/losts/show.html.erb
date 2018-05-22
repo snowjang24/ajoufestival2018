@@ -1,0 +1,25 @@
+<div class="lost-show-background">
+  <div class="container text-center">
+    <p id="notice"><%= notice %></p>
+    <%=image_tag(@lost.lost, :class => 'lost-show-img') %>
+    <div class="lost-margin-top">
+      <p class="lost-show-content">
+        <strong>분실물:</strong>
+        <%= @lost.item %>
+      </p>
+      <p class="lost-show-content">
+        <strong>잃어버린 곳 / 찾은 곳:</strong>
+        <%= @lost.place %>
+      </p>
+      <p class="lost-show-content">
+        <strong>연락처:</strong>
+        <%= @lost.number %>
+      </p>
+    </div>
+    
+    <div class="lost-show-last-btn">
+    <%= link_to 'Edit', edit_lost_path(@lost), :class => 'btn btn-outline-dark btn-margin-right' %>
+    <%= link_to 'Back', losts_path, :class => 'btn btn-outline-dark btn-margin-left' %>
+    </div>
+  </div>
+</div>

@@ -1,67 +1,61 @@
-<h1>New Pub</h1>
-<!--s%= render 'form', pub: @pub %>-->
- 
-
-<%=form_tag "/pubs", method: 'post', multipart: true do %>
-    <%=label_tag :pubname, '주점이름'%>
-    <%=text_field_tag(:pubname)%><br />
-    
-    <%=label_tag :major, '학과'%>
-    <%=text_field_tag(:major)%><br/>
-    
-    <%=label_tag :pub_detail, '주점설명'%>
-    <%=text_area_tag (:pub_detail)%><br />
-    
-    <%=label_tag :date, '주점날짜'%>
-    <%=text_field_tag (:date)%><br />
-
-    <%=label_tag :map, '구역'%>
-    <%=text_field_tag (:map)%><br />
-    
-    <%=label_tag :pubprice, '가격(사진)'%>
-    <%=file_field_tag (:pubprice)%><br />
-    
-    <%=label_tag :pubpost, '포스터(사진)'%>
-    <%=file_field_tag (:pubpost)%><br />
-    
-    
-    <%=submit_tag '제출'%>
-
-<%end%>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br>
-<br>
-<br>
-<br>
-
-<form action ="/pubs" method='post' multipart= true >
+<div class="container text-center py-5">
+  <h1 class="py-5">Pub 등록</h1>
+  <!--s%= render 'form', pub: @pub %>-->
    
-    주점이름: <input type="string" name ="pubname">
-    학과: <input type = "string" name = "major">
-    주점설명:<input type ="text" name="pub_detail">
-    주점 여는 날:<input type ="integer" name = "date">
-    구역 <input type="integer" name = "map">
-    사진<input type ="file" name = "pubprices"><br>
-    <!--<input type ="file" name = "pubprices"><br>-->
-    <input type="submit" >
-    
-</form>
+  
+  <%=form_tag "/pubs", method: 'post', multipart: true do %>
+    <div class="mb-3">
+      <%=label_tag :pub_booth, 'pub/booth'%><br>
+      <%=text_field_tag(:pub_booth)%>
+    </div>
+    <div class="mb-3">
+      <%=label_tag :pubname, '주점이름'%><br>
+      <%=text_field_tag(:pubname)%>
+    </div>
+    <div class="mb-3">
+      <%=label_tag :major, '학과'%><br>
+      <%=text_field_tag(:major)%>
+    </div>
+    <div class="mb-3">  
+      <%=label_tag :pub_detail, '주점설명'%><br>
+      <%=text_area_tag (:pub_detail)%>
+    </div>
+    <div class="mb-3">
+      <%=label_tag :date, '주점날짜'%><br>
+      <%=text_field_tag (:date)%>
+    </div>
+    <div class="mb-3">
+      <%=label_tag :map, '구역'%><br>
+      <%=text_field_tag (:map)%>
+    </div>
+    <div class="mb-3">
+      <%=label_tag :pubprice, '가격(사진)'%><br>
+      <%=file_field_tag (:pubprice), :class => 'text-center' %>
+    </div>
+    <div class="mb-3">
+      <%=label_tag :pubpost, '포스터(사진)'%><br>
+      <%=file_field_tag (:pubpost)%>
+    </div>
+    <div class="mb-3">
+      <%=submit_tag '제출', :class => 'btn btn-outline-primary' %>
+    </div>
+  <%end%>
+  
+  <!--<br>-->
+  <!--<br>-->
+  <!--<br>-->
+  <!--<br>-->
+  
+  <!--<form action ="/pubs" method='post' multipart= true >-->
+     
+  <!--    주점이름: <input type="string" name ="pubname">-->
+  <!--    학과: <input type = "string" name = "major">-->
+  <!--    주점설명:<input type ="text" name="pub_detail">-->
+  <!--    주점 여는 날:<input type ="integer" name = "date">-->
+  <!--    구역 <input type="integer" name = "map">-->
+  <!--    사진<input type ="file" name = "pubprices"><br>-->
+      <!--<input type ="file" name = "pubprices"><br>-->
+  <!--    <input type="submit" >-->
+      
+  <!--</form>-->
+</div>

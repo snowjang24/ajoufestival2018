@@ -1,6 +1,7 @@
 class CreatePubs < ActiveRecord::Migration[5.0]
   def change
     create_table :pubs do |t|
+      t.string :pub_booth
       t.string :major
       t.string :pubname
       t.integer :date
@@ -14,7 +15,8 @@ class CreatePubs < ActiveRecord::Migration[5.0]
       #t.:area
       #area detail 필요할까? by minkj
       t.text :pub_detail
-      t.string :map 
+      t.string :map
+      t.string :pub_booth
       #A_1 A_2 A_3
       
       t.timestamps null:false

@@ -1,14 +1,30 @@
 Rails.application.routes.draw do
   
-#saved version
-  resources :pubs do
+  devise_for :admins
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
+  get 'abouts/about'
+  get 'about' => 'abouts#about'
+
+  resources :losts
+  resources :losts do
     collection do
-      get :list, :detail
+      get :search
     end
   end
   
-  devise_for :users
+  
+  
+#saved version
+  resources :pubs do
+    collection do
+      get :search
+    end
+  end
+  
+  
   root 'home#index'
+
   
   get 'program/index'
   get 'program/school_event'
@@ -19,11 +35,7 @@ Rails.application.routes.draw do
   get 'home/program/concert' => 'program#concert'
   
   
-  resource :pubs do
-    collection do
-      get :search
-    end
-  end
+
   get 'pubs/search' => 'pubs#search'
   # get 'pubs/indexup/:format' => 'pubs#indexup'
   # get 'pubs/indexup/:id' => 'pubs#indexup'
@@ -32,5 +44,6 @@ Rails.application.routes.draw do
   #get  'pub/edit/:pub_id' => 'pub#edit'
   #patch 'pub/update/:pub_id' => 'pub#update', as: 'pub'
   
+
 end
 

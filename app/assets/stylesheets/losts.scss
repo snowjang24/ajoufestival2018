@@ -1,0 +1,178 @@
+// Place all the styles related to the losts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.lost-container{
+  background: -webkit-linear-gradient(top, #000000 2%,#471b4d 35%,#9f4e5f 68%,#bf746b 87%,#bf746b 87%,#ecad7c 100%); /* Chrome10-25,Safari5.1-6 */
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 92vh;
+}
+
+#q_item_cont_any{
+  display: inline-block;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  text-align: center;
+}
+
+[type="search"] {
+  text-align: center;
+  font-family: 'Noto Sans KR';
+  font-size: 1.2rem;
+}
+
+
+.lost-title {
+  font-size: 3rem;
+  font-family: 'Noto Sans KR';
+  color: white;
+  text-shadow: 0px 1px #333333, 4px 4px 0px #333333a8;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  padding-top: 4rem;
+}
+
+.lost_search ~ a:visited {
+  color: white !important;
+}
+
+.lost-new-button{
+  color: white;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.lost-input{
+  border-bottom: 6px solid #491c4d !important;
+  background: none;
+  	  width: 75% !important;
+}
+
+.lost-new-title {
+  font-size: 3rem;
+  font-family: 'Noto Sans KR';
+  color: white;
+  text-shadow: 0px 1px #333333, 4px 4px 0px #333333a8;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  padding-top: 4rem;
+}
+
+.lost-label {
+  padding-bottom: 0.8rem;
+  font-size: 1.5rem;
+  color:white;
+}
+
+.lost-content {
+  margin-bottom: 1.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.lost-new-content-background{
+  background: -webkit-linear-gradient(top, #000000 2%,#471b4d 35%,#9f4e5f 68%,#bf746b 87%,#bf746b 87%,#ecad7c 100%); /* Chrome10-25,Safari5.1-6 */
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 92vh;
+}
+
+img[alt="lost-img"] ~ figcaption {
+  border-top: 1px solid #806183 !important;
+}
+
+.lost-content-long {
+  margin-bottom: 1rem;
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+}
+
+.lost-img-new {
+  border: 1px solid #409cff;
+  padding: 0.5rem;
+}
+
+.img-uploader{
+  margin-bottom: 0.5rem;
+}
+
+.img-uploader > input{
+  display: none;
+}
+
+.img-uploader > label {
+  cursor: pointer;
+}
+
+.lost-search{
+  display: flex;
+  color: white;
+  // padding-bottom: 1rem; 
+
+}
+
+// 민욱이의 추가 사항
+#columns{
+        column-width:350px;
+        column-gap: 15px;
+      }
+      #columns figure{
+        display: inline-block;
+        border:1px solid rgba(87, 77, 77, 0.2);
+        margin:0;
+        margin-bottom: 15px;
+        padding:10px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.77);;
+        background-color: #f1f1f1db;
+      }
+      #columns figure img{
+        width:100%;
+        border: 1px solid #491c4d;
+      }
+      #columns figure figcaption{
+        border-top:1px solid rgba(0,0,0,0.2);
+        padding:10px;
+        margin-top:11px;
+      }
+
+// 여기까지 내꺼
+.btn-outline-dark {
+  color: #ffffff !important;
+  border: 2px solid #491c4d;
+}
+
+//lost-show
+.lost-show-background {
+  background: -webkit-linear-gradient(top, #000000 2%,#471b4d 35%,#9f4e5f 68%,#bf746b 87%,#bf746b 87%,#ecad7c 100%); /* Chrome10-25,Safari5.1-6 */
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 92vh;
+  margin-top: 8vh;
+}
+
+.lost-margin-top{
+  margin-top: 2em;
+    margin-bottom: 2em;
+}
+.lost-show-img {
+  width: 100%;
+  margin-top: 1em;
+}
+
+.lost-show-content {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.lost-show-last-btn {
+  margin-bottom: 1.5em;
+}
+.btn-margin-right{
+  margin-right: 0.5em;
+}
+
+.btn-margin-left{
+  margin-left: 0.5em;
+}
