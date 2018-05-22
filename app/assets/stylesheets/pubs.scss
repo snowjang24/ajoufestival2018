@@ -326,16 +326,31 @@ display:none;
 }
 @media screen and (min-width: 600px) {
 #mobileshow { 
-display:block; }
+display:block; 
+  margin-left: 5em;
+  margin-right: 5em;
 }
+}
+
+
+@media screen and (min-width: 600px) {
+#mobile { 
+display:block; 
+  margin-left: 5em;
+  margin-right: 5em;
+}
+}
+
+
 
 .pub{
   float: left;
  // margin: 10em;
- margin-left: 5em;
+ //margin-left: 5em;
 }
 .date{
   float: right;
+  //margin-right: 5em;
 }
 .area{
   // position: relative;
