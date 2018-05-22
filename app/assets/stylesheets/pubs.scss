@@ -336,8 +336,10 @@ display:block; }
   float: right;
 }
 .area{
-  margin-left: auto;
-  margin-right: auto;
+ /* position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5em;*/
 }
 
 
